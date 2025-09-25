@@ -33,14 +33,6 @@ Message Flow
 
 Sequence Diagram
 
-External Interactions
-- Notification service:
-  - HTTP POST /notify
-  - Base URL configured via app.notification.base-url
-- Dataflow service:
-  - HTTP POST /dataflow
-  - Base URL configured via app.dataflow.base-url
-
 Integration Tests (End-to-End)
 - Tools:
   - Testcontainers: Starts an ephemeral RabbitMQ in Docker for the test run.
