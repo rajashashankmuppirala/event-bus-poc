@@ -31,13 +31,7 @@ Message Flow
    - POST {app.dataflow.base-url}/dataflow
 5. If Spring Cloud Bus is used, RemoteApplicationEvent subclasses can be published to broadcast cross-instance events. The project uses the non-deprecated constructor form for RemoteApplicationEvent.
 
-Bindings and Destinations
-- Spring Cloud Stream bindings:
-  - spring.cloud.stream.bindings.notificationConsumer-in-0.destination = test.notification.events
-  - spring.cloud.stream.bindings.dataflowConsumer-in-0.destination = test.dataflow.events
-- Function beans:
-  - notificationConsumer: consumes messages for notification flow.
-  - dataflowConsumer: consumes messages for dataflow flow.
+Sequence Diagram
 
 External Interactions
 - Notification service:
