@@ -1,4 +1,4 @@
-package com.example.buspoc.processing;
+package com.shashank.eventbuspoc.processing;
 
 
 import com.shashank.eventbuspoc.domain.EventType;

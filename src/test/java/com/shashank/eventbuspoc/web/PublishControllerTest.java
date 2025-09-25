@@ -1,4 +1,4 @@
-package com.example.buspoc.web;
+package com.shashank.eventbuspoc.web;
 
 
 import com.shashank.eventbuspoc.bus.AppEventPublisher;

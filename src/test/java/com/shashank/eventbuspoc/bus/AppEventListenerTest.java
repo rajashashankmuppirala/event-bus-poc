@@ -1,4 +1,4 @@
-package com.example.buspoc.bus;
+package com.shashank.eventbuspoc.bus;
 
 
 import com.shashank.eventbuspoc.bus.AppEventListener;

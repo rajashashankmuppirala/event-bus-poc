@@ -1,9 +1,10 @@
-package com.example.buspoc.processing;
+package com.shashank.eventbuspoc.processing;
 
 
-import com.shashank.eventbuspoc.domain.event.DataflowEvent;
-import com.shashank.eventbuspoc.domain.payload.DataflowPayload;
-import com.shashank.eventbuspoc.processing.DataflowEventProcessor;
+import com.shashank.eventbuspoc.domain.NotificationSubtype;
+import com.shashank.eventbuspoc.domain.event.NotificationEvent;
+import com.shashank.eventbuspoc.domain.payload.NotificationPayload;
+import com.shashank.eventbuspoc.processing.NotificationEventProcessor;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -12,7 +13,7 @@ import reactor.test.StepVerifier;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-class DataflowEventProcessorTest {
+class NotificationEventProcessorTest {
 
   @Test
   void completesOnSuccess() {
@@ -20,9 +21,9 @@ class DataflowEventProcessorTest {
     when(client.post().uri(any(String.class)).bodyValue(any()).retrieve().toBodilessEntity())
         .thenReturn(Mono.empty());
 
-    var proc = new DataflowEventProcessor(client, "http://localhost/dataflow");
-    var event = new DataflowEvent(this, "svc",
-        new DataflowPayload("flow","start","src","tgt"));
+    var proc = new NotificationEventProcessor(client, "http://localhost/notify");
+    var event = new NotificationEvent(this, "svc",
+        NotificationSubtype.EMAIL, new NotificationPayload("s","m","to@x",""));
 
     StepVerifier.create(proc.process(event)).verifyComplete();
   }
