@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: event-bus-poc
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,busrefresh,busenv
+
+demo:
+  endpoints:
+    notification: http://localhost:8081/notify
+    dataflow: http://localhost:8082/dataflow

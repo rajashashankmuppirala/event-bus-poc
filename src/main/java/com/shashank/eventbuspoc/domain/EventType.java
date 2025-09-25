@@ -1,0 +1,1 @@
+package com.shashank.eventbuspoc.domain; public enum EventType { NOTIFICATION, DATAFLOW }
